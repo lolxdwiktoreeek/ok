@@ -9,16 +9,21 @@ password_characters_list = []
 def password_creator(all_chars, empty):
     length = input("Podaj długość hasła.")
     num = ""
+    # zamiana długości hasła na integer
     while not num is int:
+        # próba zamiany
         try:
             num = int(length)
             break
+        # jeśli się nie uda:
         except:
             print("Przepraszam, ale długość musi być liczbą.")
             length = input("Podaj długość hasła.")
+    # generacja hasła
     for i in range(num):
         character = random.choice(all_chars)
         empty.append(character)
+    # przygotowanie i wysłanie wygenerowanego hasła
     password = "".join(empty)
     print("Wygenerowane hasło:", password)
 
