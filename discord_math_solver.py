@@ -1,5 +1,4 @@
 import discord
-import random 
 from discord.ext import commands
 
 intents = discord.Intents.default()
@@ -23,8 +22,8 @@ async def solve(ctx, expression):
                 float(result)
                 await ctx.send(str(result))
             except:
-                await ctx.send(file=picture)
+                await ctx.send("Sorry, couldn't solve.")
     except:
-        await ctx.send(file=picture)
+        await ctx.send("Sorry, couldn't solve.")
 
 bot.run("DISCORD BOT TOKEN")
